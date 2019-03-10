@@ -1,0 +1,22 @@
+<div class="col-md-6">
+    <h2>Customer Details</h2>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th class="hidden">Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let customer of customers">
+                <td class="hidden">{{customer.id}}</td>
+                <td>{{customer.name}}</td>
+                <td>{{customer.email}}</td>
+                <td>{{customer.address}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
