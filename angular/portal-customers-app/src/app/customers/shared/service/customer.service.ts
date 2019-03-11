@@ -28,6 +28,7 @@ export class CustomerService {
 
     /*    private customerUrl = '/api';*/
     private customerUrl = 'http://localhost:8080/customers/all';
+    private newCustomerUrl = 'http://localhost:8080/customers/create';
 
     /*  // Error in all-customers.component.ts: The 'Object' type is assignable to very few other types.
         // Did you mean to use the 'any' type instead?
@@ -57,4 +58,8 @@ export class CustomerService {
         );
     }
     */
+
+    public createCustomer(customer) {
+        return this.http.post<Customer>(this.newCustomerUrl, customer, httpOptions);
+    }
 }

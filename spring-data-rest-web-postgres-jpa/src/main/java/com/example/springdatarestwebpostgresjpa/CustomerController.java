@@ -37,10 +37,9 @@ public class CustomerController {
 	}
 
 	@PostMapping("/create")
-	public String create(@RequestBody Customer customer) {
+	public Customer create(@RequestBody Customer customer) {
 		// save a single Customer
-		repository.save(new Customer(customer.getName(), customer.getEmail(), customer.getAddress()));
-		return "Customer is created";
+		return repository.save(new Customer(customer.getName(), customer.getEmail(), customer.getAddress()));
 	}
 
 	@RequestMapping("/search/id/{id}")
