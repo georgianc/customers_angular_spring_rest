@@ -8,14 +8,16 @@
                 <th>Name</th>
                 <th>Email</th>
                 <th>Address</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let customer of customers">
+            <tr *ngFor="let customer of customers; let i = index;">
                 <td class="hidden">{{customer.id}}</td>
                 <td>{{customer.name}}</td>
                 <td>{{customer.email}}</td>
                 <td>{{customer.address}}</td>
+                <td><button class="btn btn-danger btn-sm" (click)="deleteCustomerById(customer.id, i)">Delete</button></td>
             </tr>
         </tbody>
     </table>

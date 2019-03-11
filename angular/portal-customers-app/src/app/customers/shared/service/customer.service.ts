@@ -29,6 +29,7 @@ export class CustomerService {
     /*    private customerUrl = '/api';*/
     private customerUrl = 'http://localhost:8080/customers/all';
     private newCustomerUrl = 'http://localhost:8080/customers/create';
+    private deleteCustomerUrl = 'http://localhost:8080/customers/delete';
 
     /*  // Error in all-customers.component.ts: The 'Object' type is assignable to very few other types.
         // Did you mean to use the 'any' type instead?
@@ -61,5 +62,16 @@ export class CustomerService {
 
     public createCustomer(customer) {
         return this.http.post<Customer>(this.newCustomerUrl, customer, httpOptions);
+    }
+
+    public deleteCustomerById(id: string) {
+        console.log(this.deleteCustomerUrl + '/id/' + id);
+        // this.http.delete<Customer>(this.deleteCustomerUrl + '/id/' + id, httpOptions);
+
+        // Always subscribe!
+        // An HttpClient method does not begin its HTTP request until you call subscribe() on the observable
+        // returned by that method. This is true for all HttpClient methods.
+        // https://angular.io/guide/http#always-subscribe
+        this.http.post<Customer>(this.deleteCustomerUrl + '/id/' + id, httpOptions).subscribe();
     }
 }

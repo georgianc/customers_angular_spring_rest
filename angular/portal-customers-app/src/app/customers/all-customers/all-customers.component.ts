@@ -25,4 +25,10 @@ export class AllCustomersComponent implements OnInit {
                 this.customers = data;
             });
     }
+
+    deleteCustomerById(id: string, index: number) {
+
+        this.customerService.deleteCustomerById(id);
+        this.customers.splice(index, 1);
+    }
 }
