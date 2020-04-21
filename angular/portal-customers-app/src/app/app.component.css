@@ -1,0 +1,14 @@
+.header-top {
+    position: relative;
+}
+
+.lazyloaded {
+    opacity: 1;
+    -webkit-transition: opacity .5s;
+    transition: opacity .5s;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}

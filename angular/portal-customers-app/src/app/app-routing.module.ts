@@ -3,10 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AllCustomersComponent } from './customers/all-customers/all-customers.component';
 import { AddCustomerComponent } from './customers/add-customer/add-customer.component';
-import { CustomersComponent } from './customers/customers.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  { path: 'customers', component: CustomersComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'customers', component: AllCustomersComponent },
   { path: 'customers/all', component: AllCustomersComponent },
   { path: 'customers/new', component: AddCustomerComponent },
   { path: 'customers/delete/id', component: AllCustomersComponent }
